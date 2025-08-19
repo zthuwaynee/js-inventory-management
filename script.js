@@ -84,7 +84,9 @@ btnRun.addEventListener("click", () => {
 
 btnDiscount.addEventListener("click", () => {
   if (!initialized) return log("Run demo first!");
-  log("Discount clicked.");
+  Product.applyDiscount(store.inventory, 0.15);
+  log("Applied 15% discount to all products.");
+  log(store.inventory.map(p=>p.toString()).join("\n"));
 });
 
 btnRecalc.addEventListener("click", () => {
