@@ -66,6 +66,7 @@ const outputEl = document.getElementById("output");
 const btnRun = document.getElementById("runDemo");
 const btnDiscount = document.getElementById("applyDiscountBtn");
 const btnRecalc = document.getElementById("recalculateBtn");
+const btnEdge = document.getElementById("edgeBtn");
 
 let initialized = false;
 
@@ -102,4 +103,14 @@ btnDiscount.addEventListener("click", () => {
 btnRecalc.addEventListener("click", () => {
   if (!initialized) return log("Run demo first!");
   log(`Recalculated inventory value: ${formatMoney(store.getInventoryValue())}`);
+});
+
+btnEdge.addEventListener("click", () => {
+  try {
+    new Product("", -1, -5);
+  } catch (e) {
+    log(`Invalid product test threw error as expected: ${e.message}`);
+  }
+  const notFound = store.findProductByName("NotRealProduct123");
+  log(`Lookup of 'NotRealProduct123': ${notFound === null ? "null" : notFound.toString()}`);
 });
