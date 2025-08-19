@@ -65,8 +65,21 @@ function log(msg) {
 }
 
 btnRun.addEventListener("click", () => {
+  store.inventory = [];
+  const apple = new Product("Apple", 2.5, 50);
+  const banana = new Product("Banana", 1.2, 40);
+  const bread = new PerishableProduct("Bread", 3.5, 20, "2025-02-15");
+  const milk = new PerishableProduct("Milk", 1.5, 10, "2025-01-31");
+  const cereal = new Product("Cereal", 4.8, 15);
+  store.addProduct(apple);
+  store.addProduct(banana);
+  store.addProduct(bread);
+  store.addProduct(milk);
+  store.addProduct(cereal);
   initialized = true;
-  log("Demo initialized.");
+  log(`Initial Inventory:\n${store.inventory.map(p=>p.toString()).join("\n")}`);
+  log(`Total inventory value: ${formatMoney(store.getInventoryValue())}`);
+  log(`Find product 'Milk':\n${store.findProductByName("Milk")?.toString()}`);
 });
 
 btnDiscount.addEventListener("click", () => {
