@@ -20,6 +20,15 @@ class Product {
     }
   }
 }
+class PerishableProduct extends Product {
+  constructor(name, price, quantity, expirationDate) {
+    super(name, price, quantity);
+    this.expirationDate = expirationDate.trim();
+  }
+  toString() {
+    return `Product: ${this.name}, Price: ${formatMoney(this.price)}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
+  }
+}
 function formatMoney(amount) {
   return `$${amount.toFixed(2)}`;
 }
