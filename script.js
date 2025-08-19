@@ -29,6 +29,21 @@ class PerishableProduct extends Product {
     return `Product: ${this.name}, Price: ${formatMoney(this.price)}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
   }
 }
+class Store {
+  constructor() {
+    this.inventory = [];
+  }
+  addProduct(product) {
+    this.inventory.push(product);
+  }
+  getInventoryValue() {
+    return this.inventory.reduce((sum, p) => sum + p.getTotalValue(), 0);
+  }
+  findProductByName(name) {
+    const target = name.trim().toLowerCase();
+    return this.inventory.find(p => p.name.toLowerCase() === target) || null;
+  }
+}
 function formatMoney(amount) {
   return `$${amount.toFixed(2)}`;
 }
