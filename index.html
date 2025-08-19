@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventory System | Zainulabdeen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Inventory management system using JavaScript classes, inheritance, and static methods." />
+  <style>
+    :root { --bg:#0f172a; --fg:#e2e8f0; --card:#111827; --accent:#22c55e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; background: var(--bg); color: var(--fg); }
+    header, footer { padding: 1rem 1.25rem; background: #0b1224; position: sticky; top: 0; z-index: 10; }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .card { background: var(--card); border-radius: 12px; padding: 1rem 1.25rem; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+    h1, h2 { margin: .2rem 0 .8rem; }
+    button { padding: .6rem .9rem; border-radius: 10px; border: 0; background: var(--accent); color: #052e16; font-weight: 700; cursor: pointer; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+    .row { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: .75rem; }
+    .muted { opacity: .9; }
+    a { color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inventory Management System (JS Classes)</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="row">
+        <button id="runDemo">Run Demo</button>
+        <button id="applyDiscountBtn">Apply 15% Discount</button>
+        <button id="recalculateBtn">Recalculate Inventory Value</button>
+      </div>
+      <h2>Output</h2>
+      <pre id="output" aria-live="polite">Click “Run Demo” to initialize the store and see results here.</pre>
+      <p class="muted">All results are also logged to the browser console (F12).</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 Zainulabdeen Al-Thuwaynee — Inventory assignment</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
