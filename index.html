@@ -24,16 +24,16 @@
   </style>
 </head>
 <body>
-  <header>
+  <header role="banner">
     <h1>Inventory Management System (JS Classes)</h1>
   </header>
 
-  <main>
+  <main role="main">
     <section class="card" aria-labelledby="outputTitle">
-      <div class="row">
-        <button id="runDemo" type="button">Run Demo</button>
-        <button id="applyDiscountBtn" type="button">Apply 15% Discount</button>
-        <button id="recalculateBtn" type="button">Recalculate Inventory Value</button>
+      <div class="row" role="group" aria-label="Inventory actions">
+        <button id="runDemo" type="button" aria-label="Run demo to initialize products">Run Demo</button>
+        <button id="applyDiscountBtn" type="button" aria-label="Apply fifteen percent discount to all products">Apply 15% Discount</button>
+        <button id="recalculateBtn" type="button" aria-label="Recalculate total inventory value">Recalculate Inventory Value</button>
       </div>
       <h2 id="outputTitle">Output</h2>
       <pre id="output" aria-live="polite">Click “Run Demo” to initialize the store and see results here.</pre>
@@ -41,7 +41,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <small>© 2025 Zainulabdeen Al-Thuwaynee — Inventory assignment</small>
   </footer>
 
