@@ -44,3 +44,10 @@ class Store {
     return this.inventory.find(p => p.name.toLowerCase() === target) || null;
   }
 }
+function formatMoney(n) {
+  return `$${Number(n).toFixed(2)}`;
+}
+
+function round2(n) {
+  return Math.round(n * 100) / 100;
+}
