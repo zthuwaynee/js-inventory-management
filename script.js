@@ -91,5 +91,5 @@ btnDiscount.addEventListener("click", () => {
 
 btnRecalc.addEventListener("click", () => {
   if (!initialized) return log("Run demo first!");
-  log("Recalculate clicked.");
+  log(`Recalculated inventory value: ${formatMoney(store.getInventoryValue())}`);
 });
