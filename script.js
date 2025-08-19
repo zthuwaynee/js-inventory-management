@@ -1,8 +1,10 @@
 class Product {
+  static totalProducts = 0;
   constructor(name, price, quantity) {
-    this.name = String(name).trim();
-    this.price = Number(price);
-    this.quantity = Number(quantity);
+    this.name = name.trim();
+    this.price = price;
+    this.quantity = quantity;
+    Product.totalProducts += 1;
   }
   getTotalValue() {
     return this.price * this.quantity;
@@ -10,18 +12,17 @@ class Product {
   toString() {
     return `Product: ${this.name}, Price: ${formatMoney(this.price)}, Quantity: ${this.quantity}`;
   }
+  static applyDiscount(products, discount) {
+    for (const p of products) {
+      if (p instanceof Product) {
+        p.price = round2(p.price * (1 - discount));
+      }
+    }
+  }
 }
-
-function formatMoney(n) {
-  return `$${Number(n).toFixed(2)}`;
+function formatMoney(amount) {
+  return `$${amount.toFixed(2)}`;
 }
-
-// Quick smoke test (shows in the page and console)
-const out = document.getElementById("output");
-const demo = new Product("Apple", 2.5, 4);
-const lines = [
-  demo.toString(),
-  `Total value: ${formatMoney(demo.getTotalValue())}`
-];
-console.log(lines.join("\n"));
-if (out) out.textContent = lines.join("\n");
+function round2(n) {
+  return Math.round(n * 100) / 100;
+}
