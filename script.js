@@ -44,10 +44,37 @@ class Store {
     return this.inventory.find(p => p.name.toLowerCase() === target) || null;
   }
 }
-function formatMoney(n) {
-  return `$${Number(n).toFixed(2)}`;
+function formatMoney(amount) {
+  return `$${amount.toFixed(2)}`;
 }
-
 function round2(n) {
   return Math.round(n * 100) / 100;
 }
+
+const store = new Store();
+const outputEl = document.getElementById("output");
+const btnRun = document.getElementById("runDemo");
+const btnDiscount = document.getElementById("applyDiscountBtn");
+const btnRecalc = document.getElementById("recalculateBtn");
+
+let initialized = false;
+
+function log(msg) {
+  console.log(msg);
+  outputEl.textContent += `\n${msg}`;
+}
+
+btnRun.addEventListener("click", () => {
+  initialized = true;
+  log("Demo initialized.");
+});
+
+btnDiscount.addEventListener("click", () => {
+  if (!initialized) return log("Run demo first!");
+  log("Discount clicked.");
+});
+
+btnRecalc.addEventListener("click", () => {
+  if (!initialized) return log("Run demo first!");
+  log("Recalculate clicked.");
+});
