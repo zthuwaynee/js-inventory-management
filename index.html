@@ -5,6 +5,7 @@
   <title>Inventory System | Zainulabdeen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Inventory management system using JavaScript classes, inheritance, and static methods." />
+  <meta name="theme-color" content="#0f172a" />
   <style>
     :root { --bg:#0f172a; --fg:#e2e8f0; --card:#111827; --accent:#22c55e; --accent-2:#16a34a; --muted:#94a3b8; }
     * { box-sizing: border-box; }
@@ -14,13 +15,17 @@
     .card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 1.1rem 1.25rem; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
     h1, h2 { margin: .2rem 0 .8rem; }
     .row { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    button { padding: .65rem 1rem; border-radius: 10px; border: 0; background: var(--accent); color: #052e16; font-weight: 700; cursor: pointer; transition: transform .06s ease, box-shadow .2s ease, background .2s ease; }
+    button { padding: .7rem 1.05rem; border-radius: 12px; border: 0; background: var(--accent); color: #052e16; font-weight: 700; cursor: pointer; transition: transform .06s ease, box-shadow .2s ease, background .2s ease; }
     button:hover { background: var(--accent-2); box-shadow: 0 8px 16px rgba(22,163,74,.25); }
     button:active { transform: translateY(1px); }
     button:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
-    pre { white-space: pre-wrap; word-wrap: break-word; background: rgba(0,0,0,.25); border-radius: 10px; padding: .75rem .9rem; min-height: 180px; }
+    pre { white-space: pre-wrap; word-wrap: break-word; background: rgba(0,0,0,.25); border-radius: 10px; padding: 1rem 1.1rem; min-height: 200px; }
     .muted { color: var(--muted); }
     a { color: #93c5fd; }
+    @media (max-width: 540px) {
+      .row { gap: .5rem; }
+      button { width: 100%; }
+    }
   </style>
 </head>
 <body>
